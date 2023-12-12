@@ -31,24 +31,11 @@ class UserAddSchema(BaseModel):
     ban: Optional[bool] = False
 
 
-class UserDelSchema(BaseModel):
+class UserGetSchema(BaseModel):
     id: int
-    date_registration: datetime.date
-    time_registration: datetime.time
-    name: Optional[str]
-    ban: bool
-
-
-class UserBanSchema(BaseModel):
-    id: int
-    date_registration: datetime.date
-    time_registration: datetime.time
-    name: Optional[int]
-    ban: bool
 
 
 class UserUpdateSchema(BaseModel):
-    id: int
     date_update: datetime.date
     time_update: datetime.time
     name: Optional[str]
@@ -57,5 +44,5 @@ class UserUpdateSchema(BaseModel):
     ban: Optional[bool]
 
 
-class UserResponseSchema(BaseModel):
+class UserDeleteSchema(BaseModel):
     id: int
