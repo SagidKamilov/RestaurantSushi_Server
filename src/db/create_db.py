@@ -1,4 +1,3 @@
-
 from src.db.async_db import engine
 from src.models.base import Base
 
