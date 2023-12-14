@@ -1,53 +1,37 @@
 ![Static Badge](https://img.shields.io/badge/FastAPI%20-%20v0.45.0%20-%20green?style=for-the-badge&logo=fastapi&color=darkgreen)
 ![Static Badge](https://img.shields.io/badge/SQLAlchemy%20-%20v2.0.23%20-%20green?style=for-the-badge&logo=sqlalchemy&color=darkgreen)
 ![Static Badge](https://img.shields.io/badge/Alembic%20-%20v1.12.1%20-%20green?style=for-the-badge&logo=Alembic&color=darkgreen)
-![Static Badge](https://img.shields.io/badge/Pydantic%20-%201.2.0%20-%20green?style=for-the-badge&logo=Pydantic&color=darkgreen)
-![Static Badge](https://img.shields.io/badge/Uvicorn%20-%200.22.0%20-%20green?style=for-the-badge&logo=Uvicorn&color=darkgreen)
-![Static Badge](https://img.shields.io/badge/Asyncpg%20-%200.29.0%20-%20green?style=for-the-badge&logo=Asyncpg&color=darkgreen)
-
+![Static Badge](https://img.shields.io/badge/Pydantic%20-%20v1.2.0%20-%20green?style=for-the-badge&logo=Pydantic&color=darkgreen)
+![Static Badge](https://img.shields.io/badge/Uvicorn%20-%20v0.22.0%20-%20green?style=for-the-badge&logo=Uvicorn&color=darkgreen)
+![Static Badge](https://img.shields.io/badge/Asyncpg%20-%20v0.29.0%20-%20green?style=for-the-badge&logo=Asyncpg&color=darkgreen)
+![Static Badge](https://img.shields.io/badge/DOCKER%20-%20%20-%20green?style=for-the-badge&logo=Docker&color=darkgreen)
 # RestaurantSushi_Server
-### Серверная часть для ресторана суши
 
-Проект представляет собой серверную часть для ресторана суши, разработанную с использованием SQLAlchemy, Pydantic и FastAPI.
+RestaurantSushi_Server - Серверная часть для ресторана суши.
+Проект RestaurantSushi_Server представляет собой серверную инфраструктуру на основе чистой архитектуры (луковица), созданную специально для управления данными в ресторане суши. Этот проект обеспечивает надежное и эффективное взаимодействие с базой данных, обработку заказов, управление меню и клиентской информацией.
 
+## Описание проекта
 
-### Описание
+Управление меню: Добавление, обновление и удаление блюд, категорий и других элементов меню.
 
-Этот проект создан для управления данными и операциями на стороне сервера ресторана суши. 
-Он предоставляет API для выполнения различных функций, таких как управление меню, заказы, и клиентской информацией.
+Управление заказами: Обработка заказов, отслеживание статуса заказа и взаимодействие с клиентскими запросами.
 
+Клиентская информация: Хранение и обработка данных о клиентах, история заказов и предпочтения.
 
-### Технологии
+Администрация: Управление сервисом за счет полного контроля над всеми процессами, получаемого через админ-панель.
 
-- **FastAPI**: FastAPI - современный, быстрый (в сравнении с Flask, Django), веб-фреймворк для создания микросервисов с API. 
-- **SQLAlchemy**: SQLAlchemy - библиотека для работы с базами данных в Python. Она предоставляет высокоуровневый API для взаимодействия с различными СУБД.
-- **Pydantic**: Pydantic - библиотека для проверки данных и сериализации объектов Python. Она интегрируется хорошо с FastAPI для валидации запросов и ответов API.
-- **Alembic
+## Технологии
 
+- **FastAPI**: TaskService_Server основан на FastAPI, современном и высокопроизводительном веб-фреймворке для создания микросервисов с API. По сравнению с аналогами, такими как Flask и Django, FastAPI обеспечивает быстрый и эффективный опыт разработки.
 
-### Установка
+- **SQLAlchemy**: Для взаимодействия с базой данных, TaskService_Server использует SQLAlchemy, мощный инструмент для работы с реляционными базами данных.
 
-1. Клонировать репозиторий:
+- **Alembic**: Миграции базы данных в TaskService_Server управляются с помощью Alembic, что обеспечивает надежное и управляемое изменение структуры данных.
 
-    ```bash
-    git clone https://github.com/ваш-пользователь/ваш-репозиторий.git
-    ```
+- **Pydantic**: С использованием Pydantic в TaskService_Server обеспечивается удобная и автоматизированная валидация данных, что повышает надежность системы.
 
-2. Установить зависимости:
+- **Uvicorn**: Для запуска и обслуживания веб-приложения используется Uvicorn, обеспечивающий высокую производительность и поддержку асинхронности.
 
-    ```bash
-    pip install -r requirements.txt.txt
-    ```
+- **Asyncpg**: В качестве асинхронного драйвера для работы с SQLite, TaskService_Server использует AIOSQLITE, что способствует эффективной обработке запросов.
 
-3. Запустить сервер:
-
-    ```bash
-    uvicorn main:app --reload
-    ```
-
-
-
-### Использование
-
-После установки и запуска сервера, API будет доступно по адресу http://localhost:8000/docs для интерактивной документации с использованием Swagger UI. 
-Также, можно использовать ручки API напрямую.
+- **Docker**: Приложение легко развертывается и управляется в контейнерной среде с использованием Docker, обеспечивая удобство и консистентность окружения
