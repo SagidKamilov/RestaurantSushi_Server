@@ -13,7 +13,6 @@ class MenuSchema(BaseModel):
 
 
 class MenuAddSchema(BaseModel):
-    id: int
     name: str
     weight: int
     composition: str
@@ -22,7 +21,6 @@ class MenuAddSchema(BaseModel):
 
 
 class MenuUpdateSchema(BaseModel):
-    id: int
     name: Optional[str]
     weight: Optional[int]
     composition: Optional[str]
@@ -31,8 +29,4 @@ class MenuUpdateSchema(BaseModel):
 
 
 class MenuDelSchema(BaseModel):
-    id: int
-
-
-class MenuResponseSchema(BaseModel):
     id: int

@@ -20,7 +20,6 @@ class UserSchema(BaseModel):
 
 
 class UserAddSchema(BaseModel):
-    id: int
     name: str
     date_registration: datetime.date
     time_registration: datetime.time
