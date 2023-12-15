@@ -24,9 +24,14 @@ class Users(Base):
     def to_read_model(self) -> UserSchema:
         return UserSchema(
             id=self.id,
+            telegram_id=self.telegram_id,
             name=self.name,
             address=self.address,
             date_registration=self.date_registration,
             time_registration=self.time_registration,
+            date_update=self.date_update,
+            time_update=self.time_update,
+            count_ask_address=self.count_ask_address,
+            ban=self.ban
         )
 
