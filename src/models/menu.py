@@ -1,4 +1,5 @@
 from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy import String
 
 from src.models.base import Base
 from src.schemas.menu import MenuSchema
@@ -7,9 +8,9 @@ class Menu(Base):
     __tablename__ = "Menu"
 
     menu_id: Mapped[int] = mapped_column(primary_key=True)
-    name: Mapped[str]
+    name: Mapped[str] = mapped_column(String(250))
     weight: Mapped[int]
-    composition: Mapped[str]
+    composition: Mapped[str] = mapped_column(String(300))
     cost: Mapped[int]
     stop_list: Mapped[bool]
 
