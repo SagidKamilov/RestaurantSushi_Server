@@ -9,7 +9,7 @@ from src.schemas.users import UserSchema
 class Users(Base):
     __tablename__ = "Users"
 
-    id: Mapped[int] = mapped_column(primary_key=True)
+    user_id: Mapped[int] = mapped_column(primary_key=True)
     telegram_id: Mapped[int]
     name: Mapped[str]
     address: Mapped[str]
@@ -22,7 +22,7 @@ class Users(Base):
 
     def to_read_model(self) -> UserSchema:
         return UserSchema(
-            id=self.id,
+            id=self.user_id,
             telegram_id=self.telegram_id,
             name=self.name,
             address=self.address,
