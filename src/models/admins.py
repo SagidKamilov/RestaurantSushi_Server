@@ -13,4 +13,3 @@ class Admins(Base):
         return AdminSchema(
             id=self.id,
         )
-
