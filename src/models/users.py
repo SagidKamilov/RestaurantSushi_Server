@@ -1,9 +1,8 @@
-import datetime
+from datetime import datetime
 
 from sqlalchemy.orm import Mapped, mapped_column
 
 from src.models.base import Base
-from src.schemas.admins import AdminSchema
 from src.schemas.users import UserSchema
 
 
@@ -11,10 +10,10 @@ class Users(Base):
     __tablename__ = "Users"
 
     id: Mapped[int] = mapped_column(primary_key=True)
+    telegram_id: Mapped[int]
     name: Mapped[str]
     address: Mapped[str]
     count_ask_address: Mapped[int]
-    telegram_id: Mapped[int]
     date_registration: Mapped[datetime.date]
     time_registration: Mapped[datetime.time]
     date_update: Mapped[datetime.date]
@@ -32,6 +31,6 @@ class Users(Base):
             date_update=self.date_update,
             time_update=self.time_update,
             count_ask_address=self.count_ask_address,
-            ban=self.ban
+            ban=self.ban,
         )
 
