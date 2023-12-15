@@ -18,7 +18,7 @@ class Users(Base):
     date_registration: Mapped[datetime.date]
     time_registration: Mapped[datetime.time]
     date_update: Mapped[datetime.date]
-    time_update: Mapped[datetime.date]
+    time_update: Mapped[datetime.time]
     ban: Mapped[bool]
 
     def to_read_model(self) -> UserSchema:
