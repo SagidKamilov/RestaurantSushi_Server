@@ -8,7 +8,7 @@ from src.schemas.history import HistorySchema
 class History(Base):
     __tablename__ = "History"
 
-    history_id: Mapped[int] = mapped_column(primary_key=True)
+    history_id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
     order: Mapped[JSON]
     user_id: Mapped[int] = mapped_column(ForeignKey("users.user_id"))
 

@@ -1,4 +1,4 @@
-from datetime import datetime
+import datetime
 
 from sqlalchemy.orm import Mapped, mapped_column
 from sqlalchemy import String, Date, func, Time
@@ -10,15 +10,15 @@ from src.schemas.users import UserSchema
 class Users(Base):
     __tablename__ = "Users"
 
-    user_id: Mapped[int] = mapped_column(primary_key=True)
+    user_id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
     telegram_id: Mapped[int]
     name: Mapped[str] = mapped_column(String(250))
     address: Mapped[str] = mapped_column(String(250))
     count_ask_address: Mapped[int]
-    date_registration: Mapped[datetime.date] = mapped_column(Date(timezone=True), server_default=func.now)
-    time_registration: Mapped[datetime.time] = mapped_column(Time(timezone=True), server_default=func.now)
-    date_update: Mapped[datetime.date] = mapped_column(Date(timezone=True), server_default=func.now)
-    time_update: Mapped[datetime.time] = mapped_column(Time(timezone=True), server_default=func.now)
+    date_registration: Mapped[datetime.date] = mapped_column(Date())
+    time_registration: Mapped[datetime.time] = mapped_column(Time())
+    date_update: Mapped[datetime.date] = mapped_column(Date())
+    time_update: Mapped[datetime.time] = mapped_column(Time())
     ban: Mapped[bool]
 
     def to_read_model(self) -> UserSchema:

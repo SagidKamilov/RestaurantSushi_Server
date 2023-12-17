@@ -7,7 +7,7 @@ from src.schemas.menu import MenuSchema
 class Menu(Base):
     __tablename__ = "Menu"
 
-    menu_id: Mapped[int] = mapped_column(primary_key=True)
+    menu_id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
     name: Mapped[str] = mapped_column(String(250))
     weight: Mapped[int]
     composition: Mapped[str] = mapped_column(String(300))
