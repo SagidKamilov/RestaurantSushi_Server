@@ -8,7 +8,10 @@ from src.schemas.users import UserSchema
 
 
 class Users(Base):
-    __tablename__ = "Users"am_id: Mapped[int]
+    __tablename__ = "Users"
+
+    user_id: Mapped[int] = mapped_column(primary_key=True)
+    telegram_id: Mapped[int]
     name: Mapped[str] = mapped_column(String(250))
     address: Mapped[str] = mapped_column(String(250))
     count_ask_address: Mapped[int]
@@ -25,9 +28,6 @@ class Users(Base):
             name=self.name,
             address=self.address,
             date_registration=self.date_registration,
-
-    user_id: Mapped[int] = mapped_column(primary_key=True)
-    telegr
             time_registration=self.time_registration,
             date_update=self.date_update,
             time_update=self.time_update,
