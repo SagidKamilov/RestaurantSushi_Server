@@ -17,6 +17,7 @@ class SQLOrmRepository:
         hidden_id = data.get("id")
         stmt = select(self.model).filter_by(id=hidden_id)
         result = await self.session.execute(stmt)
+        print(result)
         return result.scalar_one().to_read_model()
 
     async def find_all(self):

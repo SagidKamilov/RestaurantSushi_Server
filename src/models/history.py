@@ -5,6 +5,7 @@ from sqlalchemy.types import JSON
 from src.models.base import Base
 from src.schemas.history import HistorySchema
 
+
 class History(Base):
     __tablename__ = "History"
 

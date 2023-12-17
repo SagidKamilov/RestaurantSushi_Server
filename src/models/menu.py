@@ -4,6 +4,7 @@ from sqlalchemy import String
 from src.models.base import Base
 from src.schemas.menu import MenuSchema
 
+
 class Menu(Base):
     __tablename__ = "Menu"
 
