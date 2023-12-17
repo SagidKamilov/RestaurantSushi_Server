@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from src.api.routers import routers
+from src.api.routers import all_routers
 from src.db.create_db import create_database
 
 
@@ -12,5 +12,5 @@ async def create_db():
     await create_database()
 
 
-for router in routers:
+for router in all_routers:
     app.include_router(router=router)
