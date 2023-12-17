@@ -5,11 +5,13 @@ from src.db.async_db import async_session_maker
 
 from src.repositories.users import UsersRepository
 from src.repositories.admins import AdminsRepository
+from src.repositories.menu import MenuRepository
 
 
 class IUnitOfWork(ABC):
     admins: Type[AdminsRepository]
     users: Type[UsersRepository]
+    menu: Type[MenuRepository]
 
     @abstractmethod
     def __init__(self):

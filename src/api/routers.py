@@ -4,5 +4,5 @@ from src.api.users import router as user_router
 
 all_routers = [
     admin_router,
-    user_router,
+    user_router
 ]
