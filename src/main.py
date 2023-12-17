@@ -7,7 +7,7 @@ from src.db.create_db import create_database
 app = FastAPI(title="API для Restaurant of Sushi")
 
 
-@app.on_event('start_up')
+@app.on_event('startup')
 async def create_db():
     await create_database()
 
