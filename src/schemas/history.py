@@ -16,6 +16,9 @@ class HistoryAddSchema(BaseModel):
     order: Json[Any]
     user_id: int
 
+class HistoryGetSchema(BaseModel):
+    user_id: int
+
 
 class HistoryDeleteSchema(BaseModel):
     id: int
