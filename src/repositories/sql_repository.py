@@ -38,10 +38,3 @@ class SQLOrmRepository:
         result = await self.session.execute(stmt)
         return result.rowcount
 
-
-# from asyncio import run
-# async def getlll():
-#     a = await SQLOrmRepository().find_all()
-#     print(a)
-#
-# run(getlll())
