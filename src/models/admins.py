@@ -7,11 +7,11 @@ from src.schemas.admins import AdminSchema
 class Admins(Base):
     __tablename__ = "Admins"
 
-    admin_id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
+    id: Mapped[int] = mapped_column(name="admin_id", primary_key=True, autoincrement=True)
     level: Mapped[int]
 
     def to_read_model(self) -> AdminSchema:
         return AdminSchema(
-            id=self.admin_id,
+            id=self.id,
             level=self.level
         )

@@ -5,7 +5,6 @@ from src.uow.uow_manager import IUnitOfWork
 
 
 class MenuService:
-
     @staticmethod
     async def menu_get(menu: MenuAddSchema, uow: IUnitOfWork):
         menu_data = menu.model_dump()
@@ -14,7 +13,6 @@ class MenuService:
             await uow.commit()
             return menu_data
 
-
     @staticmethod
     async def menu_del(menu: MenuDelSchema, uow: IUnitOfWork):
         menu_data = menu.model_dump()
@@ -22,8 +20,6 @@ class MenuService:
             row_count = await uow.menu.delete_one(data=menu_data)
             await uow.commit()
             return row_count
-
-
 
     @staticmethod
     async def menu_update(menu: MenuUpdateSchema, uow: IUnitOfWork):

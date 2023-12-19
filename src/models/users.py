@@ -10,7 +10,7 @@ from src.schemas.users import UserSchema
 class Users(Base):
     __tablename__ = "Users"
 
-    user_id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
+    id: Mapped[int] = mapped_column(name="user_id", primary_key=True, autoincrement=True)
     telegram_id: Mapped[int]
     name: Mapped[str] = mapped_column(String(250))
     address: Mapped[str] = mapped_column(String(250))
@@ -23,7 +23,7 @@ class Users(Base):
 
     def to_read_model(self) -> UserSchema:
         return UserSchema(
-            id=self.user_id,
+            id=self.id,
             telegram_id=self.telegram_id,
             name=self.name,
             address=self.address,

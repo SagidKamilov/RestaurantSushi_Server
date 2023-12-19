@@ -37,3 +37,11 @@ class SQLOrmRepository:
         stmt = delete(self.model).filter_by(id=hidden_id)
         result = await self.session.execute(stmt)
         return result.rowcount
+
+
+# from asyncio import run
+# async def getlll():
+#     a = await SQLOrmRepository().find_all()
+#     print(a)
+#
+# run(getlll())

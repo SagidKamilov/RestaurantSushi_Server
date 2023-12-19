@@ -8,7 +8,7 @@ from src.schemas.menu import MenuSchema
 class Menu(Base):
     __tablename__ = "Menu"
 
-    menu_id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
+    id: Mapped[int] = mapped_column(name="menu_id", primary_key=True, autoincrement=True)
     name: Mapped[str] = mapped_column(String(250))
     weight: Mapped[int]
     composition: Mapped[str] = mapped_column(String(300))
@@ -17,7 +17,7 @@ class Menu(Base):
 
     def to_read_model(self) -> MenuSchema:
         return MenuSchema(
-            menu_id=self.menu_id,
+            menu_id=self.id,
             name=self.name,
             weight=self.weight,
             composition=self.composition,

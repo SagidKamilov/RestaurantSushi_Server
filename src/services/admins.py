@@ -6,9 +6,9 @@ class AdminsService:
 
     @staticmethod
     async def add_admin(uow: IUnitOfWork, admin: AdminAddSchema):
-        admin_data: dict = admin.model_dump()
+        admin_dict: dict = admin.model_dump()
         async with uow:
-            admin_data = await uow.admins.add_one(admin_data)
+            admin_data = await uow.admins.add_one(admin_dict)
             await uow.commit()
             return admin_data
 
