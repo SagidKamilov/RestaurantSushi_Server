@@ -7,7 +7,7 @@ class HistoryService:
     async def get_history(history: HistoryGetSchema, uow: IUnitOfWork):
         history_dict: dict = history.model_dump()
         async with uow:
-            history_id = uow.history.find_one(data=history)
+            history_id = uow.history.find_one(data=history_dict)
             return history_id
 
 
