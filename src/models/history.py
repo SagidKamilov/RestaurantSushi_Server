@@ -13,7 +13,7 @@ class History(Base):
     __tablename__ = "History"
 
     id: Mapped[int] = mapped_column(name="history_id", primary_key=True, autoincrement=True)
-    order: Mapped[Order] = mapped_column(type_=JSON)
+    order: Mapped[Order] = mapped_column(type_=Json)
     user_id: Mapped[int] = mapped_column(ForeignKey("Users.user_id"))
 
     def to_read_model(self) -> HistorySchema:
