@@ -1,6 +1,6 @@
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column
-from sqlalchemy.types import JSON
+#from sqlalchemy.types import JSON
 
 from src.models.base import Base
 from src.schemas.history import HistorySchema
@@ -10,7 +10,7 @@ class History(Base):
     __tablename__ = "History"
 
     id: Mapped[int] = mapped_column(name="history_id", primary_key=True, autoincrement=True)
-    order: Mapped[JSON]
+    order: dict
     user_id: Mapped[int] = mapped_column(ForeignKey("users.user_id"))
 
     def to_read_model(self) -> HistorySchema:
