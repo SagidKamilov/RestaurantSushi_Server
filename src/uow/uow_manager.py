@@ -46,6 +46,8 @@ class UnitOfWork:
 
         self.users = UsersRepository(self.session)
         self.admins = AdminsRepository(self.session)
+        self.menu = MenuRepository(self.session)
+        self.history = HistoryRepository(self.session)
 
     async def __aexit__(self, *args):
         await self.rollback()
