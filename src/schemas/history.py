@@ -1,11 +1,15 @@
-from typing import Any
+from typing import Any, Dict
 
-from pydantic import BaseModel, Json
+from pydantic import BaseModel
+
+
+class Order(BaseModel):
+    order_id: dict
 
 
 class HistorySchema(BaseModel):
     id: int
-    order: Json[Any]
+    order: Order
     user_id: int
 
     class Config:
@@ -13,8 +17,9 @@ class HistorySchema(BaseModel):
 
 
 class HistoryAddSchema(BaseModel):
-    order: Json[Any]
+    order: Order
     user_id: int
+
 
 class HistoryGetSchema(BaseModel):
     user_id: int
