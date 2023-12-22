@@ -12,8 +12,8 @@ from src.repositories.history import HistoryRepository
 class IUnitOfWork(ABC):
     admins: Type[AdminsRepository]
     users: Type[UsersRepository]
-    menu: Type[MenuRepository]
     history: Type[HistoryRepository]
+    menu: Type[MenuRepository]
 
     @abstractmethod
     def __init__(self):

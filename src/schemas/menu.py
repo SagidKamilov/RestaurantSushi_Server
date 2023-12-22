@@ -21,6 +21,7 @@ class MenuAddSchema(BaseModel):
 
 
 class MenuUpdateSchema(BaseModel):
+    id: Optional[int]
     name: Optional[str]
     weight: Optional[int]
     composition: Optional[str]
@@ -30,3 +31,6 @@ class MenuUpdateSchema(BaseModel):
 
 class MenuDelSchema(BaseModel):
     id: int
+
+class MenuGetSchema(BaseModel):
+    id: Optional[int]
