@@ -17,7 +17,7 @@ class Menu(Base):
 
     def to_read_model(self) -> MenuSchema:
         return MenuSchema(
-            menu_id=self.id,
+            id=self.id,
             name=self.name,
             weight=self.weight,
             composition=self.composition,
