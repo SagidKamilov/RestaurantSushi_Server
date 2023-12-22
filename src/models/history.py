@@ -10,8 +10,8 @@ class History(Base):
     __tablename__ = "History"
 
     id: Mapped[int] = mapped_column(name="history_id", primary_key=True, autoincrement=True)
-    order: dict
-    user_id: Mapped[int] = mapped_column(ForeignKey("users.user_id"))
+    order: Mapped[int]
+    user_id: Mapped[int] = mapped_column(ForeignKey("Users.user_id"))
 
     def to_read_model(self) -> HistorySchema:
         return HistorySchema(

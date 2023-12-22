@@ -7,7 +7,7 @@ from src.services.history import HistoryService
 from src.api.dependencies import UOWDepends
 
 router = APIRouter(
-    prefix="history",
+    prefix="/history",
     tags=["History"]
 )
 

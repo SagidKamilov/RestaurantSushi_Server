@@ -6,7 +6,7 @@ from fastapi import APIRouter
 
 
 router = APIRouter(
-    prefix="menu",
+    prefix="/menu",
     tags=[
         "Menu"
     ]
