@@ -12,8 +12,8 @@ class UserService:
             return user_id
 
     @staticmethod
-    async def get_user(uow: IUnitOfWork, user: UserGetSchema):
-        user_dict = user.model_dump()
+    async def get_user(uow: IUnitOfWork, user_id: int):
+        user_dict: dict = {"id": user_id}
         async with uow:
             user = await uow.users.find_one(data=user_dict)
             return user

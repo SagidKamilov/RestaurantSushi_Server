@@ -12,8 +12,8 @@ from src.repositories.history import HistoryRepository
 class IUnitOfWork(ABC):
     users: Type[UsersRepository]
     admins: Type[AdminsRepository]
-    menu: Type[MenuRepository]
     history: Type[HistoryRepository]
+    menu: Type[MenuRepository]
 
     @abstractmethod
     def __init__(self):
@@ -46,6 +46,7 @@ class UnitOfWork:
 
         self.users = UsersRepository(self.session)
         self.admins = AdminsRepository(self.session)
+        self.menu = MenuRepository(self.session)
         self.history = HistoryRepository(self.session)
 
     async def __aexit__(self, *args):

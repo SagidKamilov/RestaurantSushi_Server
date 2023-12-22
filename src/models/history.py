@@ -2,7 +2,8 @@ from typing import Dict, Any
 
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column
-from sqlalchemy.types import JSON
+from typing import Any
+from pydantic import Json
 
 from src.models.base import Base
 from src.schemas.history import HistorySchema, Order

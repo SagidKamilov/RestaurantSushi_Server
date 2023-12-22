@@ -17,9 +17,9 @@ async def add_admin(admin: AdminAddSchema, uow: UOWDepends):
     return admin_id
 
 
-@router.get("/admin")
-async def get_admin(admin: AdminGetSchema, uow: UOWDepends):
-    admin_data = await AdminsService().get_admin(uow, admin)
+@router.get("/admin/{id}")
+async def get_admin(id: int, uow: UOWDepends):
+    admin_data = await AdminsService().get_admin(uow, id)
     return admin_data
 
 
