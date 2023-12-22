@@ -29,8 +29,8 @@ async def get_users(uow: UOWDepends):
 
 
 @router.put("/user")
-async def edit_user(user: UserGetSchema, user_edit: UserUpdateSchema, uow: UOWDepends):
-    user = await UserService().edit_user(uow=uow, user=user_edit)
+async def edit_user(user: UserUpdateSchema, uow: UOWDepends):
+    user = await UserService().edit_user(uow=uow, user=user)
     return user
 
 
