@@ -10,8 +10,8 @@ from src.repositories.history import HistoryRepository
 
 
 class IUnitOfWork(ABC):
-    admins: Type[AdminsRepository]
     users: Type[UsersRepository]
+    admins: Type[AdminsRepository]
     menu: Type[MenuRepository]
     history: Type[HistoryRepository]
 
@@ -46,6 +46,7 @@ class UnitOfWork:
 
         self.users = UsersRepository(self.session)
         self.admins = AdminsRepository(self.session)
+        self.history = HistoryRepository(self.session)
 
     async def __aexit__(self, *args):
         await self.rollback()
