@@ -7,13 +7,14 @@ from pydantic import BaseModel
 
 class UserSchema(BaseModel):
     id: int
+    telegram_id: int
     date_registration: datetime.date
     time_registration: datetime.time
     date_update: datetime.date
     time_update: datetime.time
     name: str
     address: str
-    check_address: int
+    count_ask_address: int
     ban: bool
 
     class Config:
@@ -22,13 +23,14 @@ class UserSchema(BaseModel):
 
 class UserAddSchema(BaseModel):
     name: str
+    telegram_id: int
     date_registration: datetime.date
     time_registration: datetime.time
-    date_update: datetime.date = 0
-    time_update: datetime.time = 0
-    address: Optional[str] = None
-    check_address: Optional[int] = 0
-    ban: Optional[bool] = False
+    date_update: datetime.date
+    time_update: datetime.time
+    address: str
+    count_ask_address: int
+    ban: bool
 
 
 class UserGetSchema(BaseModel):
@@ -36,11 +38,13 @@ class UserGetSchema(BaseModel):
 
 
 class UserUpdateSchema(BaseModel):
+    id: int
+    telegram_id: int
     date_update: datetime.date
     time_update: datetime.time
     name: Optional[str]
     address: Optional[str]
-    check_address: Optional[int]
+    count_ask_address: Optional[int]
     ban: Optional[bool]
 
 

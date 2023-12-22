@@ -33,4 +33,3 @@ async def get_admins(uow: UOWDepends):
 async def delete_admin(admin: AdminDeleteSchema, uow: UOWDepends):
     admin_data = await AdminsService().delete_admin(uow, admin)
     return {"deleted_rows": admin_data}
-
