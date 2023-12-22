@@ -35,3 +35,10 @@ class MenuService:
         async with uow:
             menu_data = await uow.menu.find_one(data=menu_data)
             return menu_data
+
+
+    @staticmethod
+    async def get_menus(uow: IUnitOfWork):
+        async with uow:
+            menu_data_all = await uow.menu.find_all()
+            return menu_data_all

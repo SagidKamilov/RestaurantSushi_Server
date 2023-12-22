@@ -18,6 +18,12 @@ async def get_menu(menu_id: int, uow: UOWDepends):
     return menu_data
 
 
+@router.get("/menu")
+async def get_menus(uow: UOWDepends):
+    menu_data_all = await MenuService().get_menus(uow)
+    return menu_data_all
+
+
 @router.post("/menu")
 async def add_menu(menu: MenuAddSchema, uow: UOWDepends):
     menu_data = await MenuService().add_menu(uow, menu)

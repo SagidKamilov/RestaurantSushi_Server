@@ -9,3 +9,4 @@ all_routers = [
     user_router,
     menu_router,
     history_router
+]
