@@ -1,10 +1,13 @@
-from typing import Any, Dict
+from typing import Any, Dict, List
 
 from pydantic import BaseModel
 
 
 class Order(BaseModel):
-    order_id: dict
+    list_dishes: List[int]
+    comment: str
+    cost: int
+    address: str
 
 
 class HistorySchema(BaseModel):
@@ -22,7 +25,7 @@ class HistoryAddSchema(BaseModel):
 
 
 class HistoryGetSchema(BaseModel):
-    user_id: int
+    id: int
 
 
 class HistoryDeleteSchema(BaseModel):
