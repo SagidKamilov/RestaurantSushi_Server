@@ -12,9 +12,9 @@ router = APIRouter(
 )
 
 
-@router.get("/menu")
-async def get_menu(menu: MenuGetSchema, uow: UOWDepends):
-    menu_data = await MenuService().get_menu(uow, menu)
+@router.get("/menu/{menu_id}")
+async def get_menu(menu_id: int, uow: UOWDepends):
+    menu_data = await MenuService().get_menu(uow, menu_id)
     return menu_data
 
 

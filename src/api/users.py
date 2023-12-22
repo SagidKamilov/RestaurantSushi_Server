@@ -16,9 +16,9 @@ async def add_user(user: UserAddSchema, uow: UOWDepends):
     return user_id
 
 
-@router.get("/user")
-async def get_user(user: UserGetSchema, uow: UOWDepends):
-    user = await UserService().get_user(uow=uow, user=user)
+@router.get("/user/{user_id}")
+async def get_user(user_id: int, uow: UOWDepends):
+    user = await UserService().get_user(uow=uow, user_id=user_id)
     return user
 
 
@@ -29,7 +29,7 @@ async def get_users(uow: UOWDepends):
 
 
 @router.put("/user")
-async def edit_user(user: UserGetSchema, user_edit: UserUpdateSchema, uow: UOWDepends):
+async def edit_user(user_edit: UserUpdateSchema, uow: UOWDepends):
     user = await UserService().edit_user(uow=uow, user=user_edit)
     return user
 

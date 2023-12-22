@@ -24,7 +24,7 @@ async def del_history(history: HistoryDeleteSchema, uow: UOWDepends):
     return {"deleted_rows": history_data}
 
 
-@router.get("")
-async def get_history(history: HistoryGetSchema, uow: UOWDepends):
-    history_data = await HistoryService().get_history(history, uow)
+@router.get("{history_id}")
+async def get_history(history_id: int, uow: UOWDepends):
+    history_data = await HistoryService().get_history(history_id, uow)
     return history_data

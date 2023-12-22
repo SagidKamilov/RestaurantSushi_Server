@@ -13,10 +13,10 @@ class AdminsService:
             return admin_data
 
     @staticmethod
-    async def get_admin(uow: IUnitOfWork, admin: AdminGetSchema):
-        admin_data: dict = admin.model_dump()
+    async def get_admin(uow: IUnitOfWork, id: int):
+        admin_data: dict = {"id": id}
         async with uow:
-            admin_data = await uow.admins.find_one(admin_data)
+            admin_data = await uow.admins.find_one(data=admin_data)
             return admin_data
 
     @staticmethod

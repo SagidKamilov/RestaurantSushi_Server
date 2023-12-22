@@ -30,8 +30,8 @@ class MenuService:
 
 
     @staticmethod
-    async def get_menu(uow: IUnitOfWork, menu: MenuGetSchema):
-        menu_data: dict = menu.model_dump()
+    async def get_menu(uow: IUnitOfWork, menu_id: int):
+        menu_data: dict = {"id": menu_id}
         async with uow:
             menu_data = await uow.menu.find_one(data=menu_data)
             return menu_data

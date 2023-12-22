@@ -1,6 +1,8 @@
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column
+from typing import Any
 #from sqlalchemy.types import JSON
+from pydantic import Json
 
 from src.models.base import Base
 from src.schemas.history import HistorySchema
