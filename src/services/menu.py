@@ -28,14 +28,12 @@ class MenuService:
             await uow.commit()
             return menu_data
 
-
     @staticmethod
     async def get_menu(uow: IUnitOfWork, menu_id: int):
         menu_data: dict = {"id": menu_id}
         async with uow:
             menu_data = await uow.menu.find_one(data=menu_data)
             return menu_data
-
 
     @staticmethod
     async def get_menus(uow: IUnitOfWork):

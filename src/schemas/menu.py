@@ -32,5 +32,6 @@ class MenuUpdateSchema(BaseModel):
 class MenuDelSchema(BaseModel):
     id: int
 
+
 class MenuGetSchema(BaseModel):
     id: Optional[int]
