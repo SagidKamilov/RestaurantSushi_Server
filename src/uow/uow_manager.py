@@ -10,8 +10,8 @@ from src.repositories.history import HistoryRepository
 
 
 class IUnitOfWork(ABC):
-    admins: Type[AdminsRepository]
     users: Type[UsersRepository]
+    admins: Type[AdminsRepository]
     history: Type[HistoryRepository]
     menu: Type[MenuRepository]
 
