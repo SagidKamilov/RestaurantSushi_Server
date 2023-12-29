@@ -4,5 +4,5 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-DB_URL = os.environ.get("DB_URL")
-MD_URL = os.environ.get("MD_URL")
+DB_URL_SQLITE = os.environ.get("DB_URL_SQLITE")
+DB_URL_MONGO = os.environ.get("DB_URL_MONGO")
