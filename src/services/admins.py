@@ -1,9 +1,8 @@
-from src.schemas.admins import AdminAddSchema, AdminGetSchema, AdminDeleteSchema
+from src.schemas.admins import AdminAddSchema, AdminDeleteSchema
 from src.uow.uow_manager import IUnitOfWork
 
 
 class AdminsService:
-
     @staticmethod
     async def add_admin(uow: IUnitOfWork, admin: AdminAddSchema):
         admin_dict: dict = admin.model_dump()

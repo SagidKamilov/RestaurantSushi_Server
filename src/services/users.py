@@ -1,4 +1,4 @@
-from src.schemas.users import UserAddSchema, UserGetSchema, UserUpdateSchema, UserDeleteSchema
+from src.schemas.users import UserAddSchema, UserUpdateSchema, UserDeleteSchema
 from src.uow.uow_manager import IUnitOfWork
 
 
