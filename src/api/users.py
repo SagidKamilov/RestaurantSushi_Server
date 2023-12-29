@@ -1,12 +1,14 @@
 from fastapi import APIRouter
 
-from src.schemas.users import UserAddSchema, UserGetSchema, UserUpdateSchema, UserDeleteSchema
 from src.services.users import UserService
-
+from src.schemas.users import UserAddSchema, UserUpdateSchema, UserDeleteSchema
 from src.api.dependencies import UOWDepends
 
+
 router = APIRouter(
-    tags=["User"],
+    tags=[
+        "User"
+    ],
 )
 
 

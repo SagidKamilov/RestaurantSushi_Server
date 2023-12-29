@@ -1,10 +1,9 @@
 from fastapi import APIRouter
 
-from src.services.history import HistoryAddSchema
-from src.services.history import HistoryGetSchema
-from src.schemas.history import HistoryDeleteSchema
 from src.services.history import HistoryService
+from src.schemas.history import HistoryAddSchema, HistoryDeleteSchema
 from src.api.dependencies import UOWDepends
+
 
 router = APIRouter(
     prefix="/history",

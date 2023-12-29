@@ -1,8 +1,8 @@
+from fastapi import APIRouter
+
 from src.services.menu import MenuService
 from src.schemas.menu import MenuDelSchema, MenuAddSchema, MenuUpdateSchema, MenuGetSchema
 from src.api.dependencies import UOWDepends
-
-from fastapi import APIRouter
 
 
 router = APIRouter(
@@ -10,6 +10,12 @@ router = APIRouter(
         "Menu"
     ]
 )
+
+
+@router.post("/menu")
+async def add_menu(menu: MenuAddSchema, uow: UOWDepends):
+    menu_data = await MenuService().add_menu(uow, menu)
+    return menu_data
 
 
 @router.get("/menu/{menu_id}")
@@ -24,12 +30,6 @@ async def get_menus(uow: UOWDepends):
     return menu_data_all
 
 
-@router.post("/menu")
-async def add_menu(menu: MenuAddSchema, uow: UOWDepends):
-    menu_data = await MenuService().add_menu(uow, menu)
-    return menu_data
-
-
 @router.put("/menu")
 async def put_menu(menu: MenuUpdateSchema, uow: UOWDepends):
     menu_data = await MenuService().update_menu(uow, menu)
@@ -40,6 +40,3 @@ async def put_menu(menu: MenuUpdateSchema, uow: UOWDepends):
 async def del_menu(menu: MenuDelSchema, uow: UOWDepends):
     menu_data = await MenuService().del_menu(uow, menu)
     return {"deleted_rows": menu_data}
-
-
-

@@ -1,13 +1,14 @@
 from fastapi import APIRouter
 
-from src.schemas.admins import AdminGetSchema, AdminDeleteSchema, AdminAddSchema
 from src.services.admins import AdminsService
-
+from src.schemas.admins import AdminDeleteSchema, AdminAddSchema
 from src.api.dependencies import UOWDepends
 
 
 router = APIRouter(
-    tags=["Admin"]
+    tags=[
+        "Admin"
+    ]
 )
 
 
